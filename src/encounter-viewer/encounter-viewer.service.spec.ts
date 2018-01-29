@@ -86,10 +86,10 @@ describe('Encounter Viewer Service:', () => {
     it('should find the answer label in the form schema', () => {
         const questionUuid = '35ed8aad-d6fa-429e-961a-c877e1ad4953';
         let answerUuid = 'a89c2f42-1350-11df-a1f1-0026b9348838';
-        let label = service.findFormAnswerLabel(questionUuid, answerUuid, schema);
+        let label = service.resolveSelectedValueFromSchema(answerUuid, schema);
         expect(label).toBe('Ampath');
         answerUuid = '0f8b7f4e-1656-46b7-bc93-d1fe4f193f5d';
-        label = service.findFormAnswerLabel(questionUuid, answerUuid, schema);
+        label = service.resolveSelectedValueFromSchema(answerUuid, schema);
         expect(label).toBeUndefined();
 
     });
